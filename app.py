@@ -1,6 +1,7 @@
 import json
 import streamlit as st
 from datetime import datetime
+import os
 
 
 version_float = 1.1
@@ -8,7 +9,9 @@ version_float = 1.1
 # ------------------------------------------ QUESTIONS -----------------------------------------------
 
 def taking_out_questions(filename):
-    with open(filename, "r") as file:
+    base_directory = os.path.dirname(os.path.abspath(__file__))
+    filepath = os.path.join(base_directory, filename)
+    with open(filepath, "r") as file:
         reader = json.load(file)
         return reader
 
