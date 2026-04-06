@@ -97,7 +97,7 @@ def survey_starting(name, surname, date_of_birth, studentid):
             for i in range(len(questions)):
                 q = questions[i]
                 option_labels = [option[0] for option in q["Options"]]
-                variant = st.selectbox(f"Question{i + 1}. {q['Q']}", option_labels, key=f"Q{i}")
+                variant = st.selectbox(f"Question {i + 1}. {q['Q']}", option_labels, key=f"Q{i}")
                 position_of_option = option_labels.index(variant)
                 score = q["Options"][position_of_option][1]
                 total_score += score
